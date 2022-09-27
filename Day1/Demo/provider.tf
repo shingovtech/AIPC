@@ -1,5 +1,5 @@
 terraform {
-    required_version = ">= 1.3"
+
     required_providers {
         docker = {
             source = "kreuzwerker/docker"
@@ -23,6 +23,6 @@ provider docker {
 }
 
 provider "digitalocean" {
-    token = "dop_v1_d9594f3d211d37b677266530231405a6536181f252445305f2cdf157ef46c246"
+    token = "dop_v1_b8ca60ef9ca80d755b1b30d06c27cc07d8fa4b63966f112a45c4b6aeaaceef92"
 }
 provider local {}
