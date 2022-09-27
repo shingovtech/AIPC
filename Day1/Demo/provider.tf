@@ -23,6 +23,6 @@ provider docker {
 }
 
 provider "digitalocean" {
-    token = "dop_v1_19c338c985cb5f4283099235c740a716f956e7e84e3a9a0d6046a95668122877"
+    token = var.DO_token
 }
 provider local {}
