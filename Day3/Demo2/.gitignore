@@ -1,0 +1,5 @@
+*.tfvars
+*.pkrvars.hcl
+*.terraform*
+terraform.tfstate
+s3_config.hcl

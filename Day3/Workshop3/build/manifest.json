@@ -1,0 +1,41 @@
+{
+  "builds": [
+    {
+      "name": "codeserver",
+      "builder_type": "digitalocean",
+      "build_time": 1664427002,
+      "files": null,
+      "artifact_id": "sgp1:117844144",
+      "packer_run_uuid": "aad78998-27bb-8902-0fce-449bad6d106e",
+      "custom_data": null
+    },
+    {
+      "name": "codeserver",
+      "builder_type": "digitalocean",
+      "build_time": 1664432690,
+      "files": null,
+      "artifact_id": "sgp1:117849735",
+      "packer_run_uuid": "4fb0eb3e-755b-7ffd-4ca9-dfd7495a47e2",
+      "custom_data": null
+    },
+    {
+      "name": "codeserver",
+      "builder_type": "digitalocean",
+      "build_time": 1664436824,
+      "files": null,
+      "artifact_id": "sgp1:117853797",
+      "packer_run_uuid": "d8d56499-f65a-f9b1-384e-9997a39e5809",
+      "custom_data": null
+    },
+    {
+      "name": "codeserver",
+      "builder_type": "digitalocean",
+      "build_time": 1664437448,
+      "files": null,
+      "artifact_id": "sgp1:117854347",
+      "packer_run_uuid": "5d043422-3130-110b-5c2f-28018066e9a2",
+      "custom_data": null
+    }
+  ],
+  "last_run_uuid": "5d043422-3130-110b-5c2f-28018066e9a2"
+}

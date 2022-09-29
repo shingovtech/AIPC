@@ -1,0 +1,4 @@
+*.tfvars
+*.pkrvars.hcl
+*.terraform*
+terraform.tfstate

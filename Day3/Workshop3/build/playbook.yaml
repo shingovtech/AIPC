@@ -1,0 +1,48 @@
+- name: Setup Code Server
+  hosts: default
+  vars:
+    codeserver_archive: "https://github.com/cdr/code-server/releases/download/v{{ cs_version }}/code-server-{{ cs_version }}-linux-amd64.tar.gz"
+    codeserver_dir: "code-server-{{ cs_version }}-linux-amd64"
+    download_dir: /usr/local/opt
+    var_dir: /var/lib/code-server
+    new_dirs :
+      - "{{download_dir}}"
+      - "{{var_dir}}"
+  tasks:
+  - name: Create Directory
+    file:
+      path: "{{item}}"
+      state: directory
+    loop: "{{new_dirs}}"
+  - name: Check if archive exists
+    stat:
+      path: "{{download_dir}}/{{codeserver_dir}}.tar.gz"
+    register: cs_archive
+  - name: Download and untar archive
+    unarchive:
+      src: "{{codeserver_archive}}"
+      dest: "{{download_dir}}"
+      remote_src: true
+    when: not cs_archive.stat.exists
+  - name: Create symbolic link for Code Server Dir
+    file:
+      src: "{{download_dir}}/{{codeserver_dir}}"
+      dest: "/usr/lib/code-server"
+      state: link
+  - name: Create symbolic link for Code Server Bin
+    file:
+      src: "/usr/lib/code-server/bin/code-server"
+      dest: "/usr/bin/code-server"
+      state: link
+- name: Setup Nginx
+  hosts: default
+  tasks:
+  - name: Install Nginx
+    apt:
+      name: nginx
+      state: latest
+      update_cache: true
+    register: output
+    until: output.stderr == ""
+    retries: 5
+    delay: 10
